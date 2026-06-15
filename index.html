@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lucky Punch Promotions — Championship Boxing in Danville, VA | Luck's Boxing Gym</title>
+<meta name="description" content="Lucky Punch Promotions — pro boxing promotion and home of Luck's Boxing Gym in Danville, VA. Founded by Marcus D. Luck in 2005. Fight nights at Caesars Virginia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0a0a0b; --coal:#111113; --steel:#1a1b1e; --smoke:#26282c;
+    --red:#d11920; --red-2:#ff2b32; --gold:#f3b431; --gold-2:#ffd66b;
+    --white:#f6f4f1; --grey:#9a9aa0;
+    --disp:'Anton',Impact,sans-serif; --cond:'Barlow Condensed',sans-serif; --body:'Inter',system-ui,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--black);color:var(--white);font-family:var(--body);font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{display:block;width:100%;height:100%;object-fit:cover}
+  .wrap{max-width:1220px;margin:0 auto;padding:0 26px}
+  h1,h2,h3{font-family:var(--disp);font-weight:400;line-height:.9;text-transform:uppercase;letter-spacing:.01em}
+  .eyebrow{font-family:var(--cond);font-weight:600;letter-spacing:.34em;text-transform:uppercase;font-size:.82rem;color:var(--gold)}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--cond);font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:1.02rem;padding:15px 36px;background:var(--red);color:#fff;border:2px solid var(--red);transition:.3s;clip-path:polygon(0 0,100% 0,100% 76%,93% 100%,0 100%)}
+  .btn:hover{background:var(--red-2);border-color:var(--red-2);transform:translateY(-3px)}
+  .btn-gold{background:var(--gold);color:#111;border-color:var(--gold)}
+  .btn-gold:hover{background:var(--gold-2);border-color:var(--gold-2)}
+  .btn-ghost{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.26)}
+  .btn-ghost:hover{background:#fff;color:var(--black);border-color:#fff}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:16px 34px;transition:.4s}
+  nav.scrolled{background:rgba(10,10,11,.96);backdrop-filter:blur(8px);border-bottom:2px solid var(--red);padding:11px 34px}
+  .brand{display:flex;align-items:center}
+  .brand img{height:42px;width:auto;display:block;transition:.4s}
+  nav.scrolled .brand img{height:36px}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{font-family:var(--cond);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.96rem;color:var(--white);transition:.25s}
+  .nav-links a:hover{color:var(--gold)}
+  .menu-tog{display:none;background:none;border:0;color:#fff;font-size:1.6rem;cursor:pointer}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;padding-bottom:8vh}
+  .hero::before{content:"";position:absolute;inset:0;background:
+    linear-gradient(180deg,rgba(10,10,11,.7) 0%,rgba(10,10,11,.32) 38%,rgba(10,10,11,.72) 72%,rgba(10,10,11,.98)),
+    url('https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=2000&q=80') center 28%/cover}
+  .hero::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 26px,rgba(209,25,32,.028) 26px,rgba(209,25,32,.028) 28px);pointer-events:none}
+  .hero-inner{position:relative;z-index:2;max-width:880px;animation:slide 1s ease both}
+  @keyframes slide{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:none}}
+  .hero-logo{width:min(360px,72vw);margin-bottom:8px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.6))}
+  .hero h1{font-size:clamp(3.2rem,9.6vw,7.6rem);margin:16px 0}
+  .hero h1 .out{-webkit-text-stroke:2px var(--gold);color:transparent}
+  .hero .tag{font-family:var(--cond);font-weight:500;font-size:clamp(1.1rem,2.4vw,1.55rem);color:#e7e7ea;max-width:560px;margin:10px 0 32px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  .estbadge{position:absolute;top:14vh;right:40px;z-index:2;text-align:center;font-family:var(--disp);color:var(--gold);transform:rotate(6deg)}
+  .estbadge .e1{font-size:.8rem;letter-spacing:.3em;color:var(--white)}
+  .estbadge .e2{font-size:2.6rem;line-height:.9}
+
+  /* PARTNER MARQUEE */
+  .marquee{background:var(--gold);overflow:hidden;padding:13px 0;border-top:3px solid #000;border-bottom:3px solid #000}
+  .marquee-track{display:flex;gap:46px;white-space:nowrap;animation:scroll 26s linear infinite;font-family:var(--disp);font-size:1.18rem;text-transform:uppercase;letter-spacing:.06em;color:#111}
+  .marquee-track span{display:flex;align-items:center;gap:46px}
+  .marquee-track span::after{content:"●";font-size:.7rem;color:var(--red)}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+
+  section{padding:118px 0}
+  .reveal{opacity:0;transform:translateY(46px);transition:.9s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .sec-head{text-align:center;margin-bottom:62px}
+  .sec-head h2{font-size:clamp(2.6rem,6vw,4.6rem);margin-top:12px}
+  .sec-head p{color:var(--grey);max-width:600px;margin:14px auto 0}
+
+  /* FOUNDER */
+  .founder{background:var(--coal);position:relative}
+  .founder .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center}
+  .founder-img{position:relative;aspect-ratio:4/5;border:3px solid var(--steel);overflow:hidden}
+  .founder-img img{filter:grayscale(.15) contrast(1.05)}
+  .founder-img::after{content:"MARCUS D. LUCK";position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(10,10,11,.95));color:#fff;font-family:var(--disp);font-size:1.3rem;letter-spacing:.04em;padding:50px 22px 18px;text-align:center}
+  .founder h2{font-size:clamp(2.2rem,5vw,3.6rem);margin:18px 0 22px}
+  .founder h2 em{font-style:normal;color:var(--red-2)}
+  .founder p{color:var(--grey);margin-bottom:18px;font-size:1.06rem}
+  .founder .pull{font-family:var(--cond);font-weight:600;font-size:1.3rem;color:var(--gold);border-left:3px solid var(--red);padding-left:18px;margin:24px 0;text-transform:uppercase;letter-spacing:.04em}
+
+  /* ROSTER */
+  .roster{background:var(--black)}
+  .fight-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:18px}
+  .fighter{position:relative;background:var(--coal);border:1px solid var(--steel);overflow:hidden;transition:.4s;width:calc(33.333% - 12px);min-width:288px}
+  .fighter:hover{border-color:var(--gold);transform:translateY(-7px)}
+  .fighter .fp{aspect-ratio:3/4;overflow:hidden;position:relative}
+  .fighter .fp img{filter:grayscale(.35) brightness(.82);transition:.7s}
+  .fighter:hover .fp img{filter:grayscale(0) brightness(.98);transform:scale(1.06)}
+  .fighter .rec{position:absolute;top:0;right:0;background:var(--red);color:#fff;font-family:var(--disp);font-size:1.15rem;padding:8px 16px;letter-spacing:.04em;z-index:2}
+  .fighter .rec.undef{background:var(--gold);color:#111}
+  .fighter .fb{padding:22px 22px 28px}
+  .fighter .wc{font-family:var(--cond);font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-size:.76rem;color:var(--gold)}
+  .fighter h3{font-size:1.7rem;margin:6px 0 2px}
+  .fighter .nick{font-family:var(--cond);font-style:italic;font-weight:500;color:var(--grey);font-size:1.02rem}
+  .fighter .fstats{display:flex;flex-wrap:wrap;gap:5px 14px;margin:12px 0 0;padding-top:12px;border-top:1px solid var(--steel);font-family:var(--cond);font-weight:600;letter-spacing:.05em;text-transform:uppercase;font-size:.82rem;color:var(--grey)}
+  .fighter .fstats b{color:var(--white)}
+  .fighter .fdesc{margin-top:12px;font-size:.86rem;color:var(--grey);line-height:1.55}
+
+  /* FIGHT NIGHT feature */
+  .fightnight{background:var(--coal);overflow:hidden}
+  .fightnight .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .flyer{position:relative;border:3px solid var(--gold);box-shadow:0 30px 70px -30px rgba(243,180,49,.4)}
+  .flyer img{display:block}
+  .fightnight h2{font-size:clamp(2.4rem,5.5vw,4rem);margin:16px 0 20px}
+  .fightnight h2 span{color:var(--gold)}
+  .fightnight p{color:var(--grey);margin-bottom:18px;font-size:1.06rem}
+  .venue{display:flex;align-items:center;gap:16px;background:var(--black);border:1px solid var(--steel);padding:18px 22px;margin:24px 0}
+  .venue .vt{font-family:var(--cond);font-weight:600;text-transform:uppercase;letter-spacing:.08em}
+  .venue .vt small{display:block;color:var(--grey);font-size:.8rem;letter-spacing:.04em}
+
+  /* GYM */
+  .gym{position:relative}
+  .gym::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(10,10,11,.9),rgba(10,10,11,.95)),url('https://images.unsplash.com/photo-1583473848882-f9a5bc7fd2ee?auto=format&fit=crop&w=2000&q=80') center/cover;filter:grayscale(.3)}
+  .gym .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .gym h2{font-size:clamp(2.4rem,5.5vw,4rem);margin:16px 0 20px}
+  .gym h2 .out{-webkit-text-stroke:2px var(--white);color:transparent}
+  .gym p{color:#cfcfd3;margin-bottom:18px}
+  .gym .process{font-family:var(--disp);color:var(--gold);font-size:1.4rem;letter-spacing:.04em;margin:8px 0 24px}
+  .prog-list{border-top:1px solid var(--smoke)}
+  .prow{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 2px;border-bottom:1px solid var(--smoke)}
+  .prow .pd{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:1.18rem}
+  .prow .pd small{display:block;font-family:var(--body);font-weight:300;text-transform:none;letter-spacing:0;color:var(--grey);font-size:.84rem;margin-top:2px}
+  .prow .pt{font-family:var(--cond);font-weight:600;color:var(--gold);white-space:nowrap}
+
+  /* SPONSORS */
+  .spon{background:var(--black);text-align:center;padding:74px 0}
+  .spon h4{font-family:var(--cond);font-weight:600;letter-spacing:.32em;text-transform:uppercase;font-size:.84rem;color:var(--grey);margin-bottom:36px}
+  .spon-row{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap}
+  .spon-tile{background:#fff;border-radius:14px;padding:20px 26px;height:108px;min-width:172px;display:flex;align-items:center;justify-content:center;transition:.3s;box-shadow:0 14px 30px -18px rgba(0,0,0,.7)}
+  .spon-tile:hover{transform:translateY(-5px)}
+  .spon-tile img{max-height:62px;max-width:190px;width:auto;height:auto;object-fit:contain;filter:grayscale(.5);transition:.3s}
+  .spon-tile:hover img{filter:none}
+
+  /* CTA */
+  .cta{position:relative;text-align:center;padding:140px 0}
+  .cta::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(10,10,11,.82),rgba(10,10,11,.93)),url('https://images.unsplash.com/photo-1622599511051-16f55a1234d0?auto=format&fit=crop&w=2000&q=80') center/cover}
+  .cta-inner{position:relative;z-index:2}
+  .cta h2{font-size:clamp(3rem,8vw,6rem);margin:18px 0}
+  .cta h2 .gold{color:var(--gold)}
+  .cta p{color:var(--grey);max-width:500px;margin:0 auto 34px;font-size:1.08rem}
+
+  footer{background:#060607;padding:62px 0 32px;border-top:3px solid var(--red)}
+  footer .wrap{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px}
+  footer .brand{margin-bottom:14px}
+  footer p,footer a{color:var(--grey);font-size:.95rem}
+  footer h5{font-family:var(--cond);font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--white);font-size:.86rem;margin-bottom:14px}
+  footer .col a{display:block;margin-bottom:8px;transition:.2s}
+  footer .col a:hover{color:var(--gold)}
+  .thrustra{border-top:1px solid rgba(255,255,255,.07);margin-top:40px;padding-top:22px;text-align:center;font-family:var(--cond);letter-spacing:.24em;text-transform:uppercase;font-size:.76rem;color:#54555a}
+  .thrustra b{color:var(--red-2)}
+
+  @media(max-width:900px){
+    .nav-links{position:fixed;inset:0 0 0 auto;width:80%;max-width:330px;background:var(--coal);flex-direction:column;justify-content:center;transform:translateX(100%);transition:.4s;gap:26px;border-left:3px solid var(--red)}
+    .nav-links.open{transform:none}
+    .menu-tog{display:block;z-index:60}
+    .estbadge{display:none}
+    .hero-logo{width:min(260px,66vw)}
+    .founder .wrap,.fightnight .wrap,.gym .wrap{grid-template-columns:1fr;gap:40px}
+    .fighter{width:100%;max-width:380px}
+    footer .wrap{grid-template-columns:1fr}
+    section{padding:84px 0}
+    .spon-row{gap:34px}
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#" class="brand"><img src="https://firebasestorage.googleapis.com/v0/b/dot-routed-user-data/o/krHEIIXQnnWifQfvdpNjarVHszm2%2F7vuwmjyhv429icf5r%2Fthumb%401024_7vuwmjyhv429icf5r.png?alt=media&token=5264af4d-0e6a-48d1-aecd-f66182097d44" alt="Luck's Boxing Gym"></a>
+  <div class="nav-links" id="navlinks">
+    <a href="#roster">The Roster</a>
+    <a href="#fightnight">Fight Nights</a>
+    <a href="#gym">The Gym</a>
+    <a href="#tickets" class="btn" style="padding:11px 24px;font-size:.9rem">Get Tickets</a>
+  </div>
+  <button class="menu-tog" id="tog">☰</button>
+</nav>
+
+<header class="hero">
+  <div class="estbadge"><div class="e1">EST.</div><div class="e2">2005</div></div>
+  <div class="wrap hero-inner">
+    <img class="hero-logo" src="https://firebasestorage.googleapis.com/v0/b/dot-routed-user-data/o/krHEIIXQnnWifQfvdpNjarVHszm2%2F7vuwmjyhv429icf5r%2Fthumb%401024_7vuwmjyhv429icf5r.png?alt=media&token=5264af4d-0e6a-48d1-aecd-f66182097d44" alt="Luck's Boxing Gym">
+    <span class="eyebrow">Pro Boxing Promotion · Danville, Virginia</span>
+    <h1>Championship Boxing,<br>Made in <span class="out">Danville</span></h1>
+    <p class="tag">Lucky Punch Promotions puts world-class talent in the ring and builds the next generation at Luck's Boxing Gym. Two decades, one mission — re-establish the sweet science.</p>
+    <div class="hero-cta">
+      <a href="#tickets" class="btn btn-gold">Get Fight Tickets</a>
+      <a href="#gym" class="btn btn-ghost">Train at Luck's</a>
+    </div>
+  </div>
+</header>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span>PBC</span><span>Mayweather Promotions</span><span>CES Boxing</span><span>Caesars Virginia</span><span>World-Class Talent</span>
+    <span>PBC</span><span>Mayweather Promotions</span><span>CES Boxing</span><span>Caesars Virginia</span><span>World-Class Talent</span>
+  </div>
+</div>
+
+<section class="founder">
+  <div class="wrap">
+    <div class="founder-img reveal">
+      <img src="https://firebasestorage.googleapis.com/v0/b/dot-routed-user-data/o/krHEIIXQnnWifQfvdpNjarVHszm2%2F0ec0zi6be3sjgqf2m%2Fthumb%401024_0ec0zi6be3sjgqf2m.png?alt=media&token=712e8e75-ca8a-4cff-b163-1901b2359a49" alt="Marcus D. Luck, founder of Lucky Punch Promotions">
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">The Promoter</span>
+      <h2>Built by a fighter's <em>belief</em> in the sport.</h2>
+      <p>Since 2005, Marcus D. Luck has done what most said couldn't be done in a city this size — bring real, sanctioned, professional boxing to Danville and keep it here.</p>
+      <p>From the gym floor to the main event, Lucky Punch Promotions has shared the card with names like CES Boxing, PBC, and Mayweather Promotions — proof that championship-level boxing has a home in Southern Virginia.</p>
+      <div class="pull">"Re-establishing the sport of boxing — one fight night at a time."</div>
+      <a href="#roster" class="btn">Meet the Roster</a>
+    </div>
+  </div>
+</section>
+
+<section class="roster" id="roster">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Lucky Punch Stable</span>
+      <h2>The Roster</h2>
+      <p>The fighters carrying the Lucky Punch banner into the ring.</p>
+    </div>
+    <div class="fight-grid reveal">
+      <article class="fighter">
+        <div class="fp"><span class="rec undef">14-0</span><img src="https://www.luckypunchpromotions.com/uploads/9/6/6/5/9665124/published/336520272-939213073746263-9151550960951655953-n.jpg" alt="Deangelo Muscle Evans"></div>
+        <div class="fb">
+          <div class="wc">Super Lightweight · Undefeated</div>
+          <h3>Deangelo Evans</h3>
+          <div class="nick">"Muscle"</div>
+          <div class="fstats"><span>5'8"</span><span>140 lbs</span><span><b>14-0</b> · 13 KO</span></div>
+          <p class="fdesc">An explosive boxer-puncher set to make a splash. The nickname "Muscle" don't lie — a champion in the making.</p>
+        </div>
+      </article>
+      <article class="fighter">
+        <div class="fp"><span class="rec">12-3</span><img src="https://www.luckypunchpromotions.com/uploads/9/6/6/5/9665124/1419810132_1.png" alt="Drew Cruel Intentions Correll"></div>
+        <div class="fb">
+          <div class="wc">Featherweight</div>
+          <h3>Drew Correll</h3>
+          <div class="nick">"Cruel Intentions"</div>
+          <div class="fstats"><span>5'10"</span><span>122 lbs</span><span><b>12-3</b> · 10 KO</span></div>
+          <p class="fdesc">Keep your ears open for this name — a rising star and champion in the making. His power is dangerous and his speed kills.</p>
+        </div>
+      </article>
+      <article class="fighter">
+        <div class="fp"><span class="rec">20-14</span><img src="https://www.luckypunchpromotions.com/uploads/9/6/6/5/9665124/1419804175_1.png" alt="James Shotgun Winchester"></div>
+        <div class="fb">
+          <div class="wc">Jr. Middleweight</div>
+          <h3>James Winchester</h3>
+          <div class="nick">"Shotgun"</div>
+          <div class="fstats"><span>5'9"</span><span>154 lbs</span><span><b>20-14</b> · 8 KO</span></div>
+          <p class="fdesc">Locked and loaded. A tough, in-your-face fighter — never a boring night. Bang-bang, he's throwing them thangs.</p>
+        </div>
+      </article>
+      <article class="fighter">
+        <div class="fp"><span class="rec">4-3</span><img src="https://www.luckypunchpromotions.com/uploads/9/6/6/5/9665124/3188868_1.jpg" alt="Mean Duane King"></div>
+        <div class="fb">
+          <div class="wc">Welterweight</div>
+          <h3>"Mean" Duane King</h3>
+          <div class="nick">Smooth &amp; slick</div>
+          <div class="fstats"><span>6'2"</span><span>147 lbs</span><span><b>4-3</b> · 2 KO</span></div>
+          <p class="fdesc">A smooth operator with lightning-fast hands. Don't let the slick style fool you — he comes to fight.</p>
+        </div>
+      </article>
+      <article class="fighter">
+        <div class="fp"><span class="rec">1-1</span><img src="https://www.luckypunchpromotions.com/uploads/9/6/6/5/9665124/1421073345_1.png" alt="Shakee The Shocker Williamson"></div>
+        <div class="fb">
+          <div class="wc">Super Middleweight</div>
+          <h3>Shakee Williamson</h3>
+          <div class="nick">"The Shocker"</div>
+          <div class="fstats"><span>5'11"</span><span>168 lbs</span><span><b>1-1</b> · 1 KO</span></div>
+          <p class="fdesc">Still learning the pro game, but he puts his punches together. Keep your eyes on this young man — he can end a fight quick.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="fightnight" id="fightnight">
+  <div class="wrap">
+    <div class="flyer reveal">
+      <img src="https://www.luckypunchpromotions.com/uploads/9/6/6/5/9665124/boxing-fight-night-flyer-poster-template-made-with-postermywall_orig.jpg" alt="Lucky Punch Promotions fight night flyer">
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">Live &amp; In Person</span>
+      <h2>Fight Night at <span>Caesars Virginia</span></h2>
+      <p>The lights, the walkouts, the roar of a hometown crowd. Lucky Punch fight nights bring sanctioned professional boxing to the casino floor — a full card of local prospects and proven contenders.</p>
+      <div class="venue">
+        <div class="vt">📍 Caesars Virginia<small>Danville, VA · Premier Event Venue</small></div>
+      </div>
+      <a href="#tickets" class="btn btn-gold">Get Tickets</a>
+    </div>
+  </div>
+</section>
+
+<section class="gym" id="gym">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Luck's Boxing Gym</span>
+      <h2>Where Champions <span class="out">Start</span></h2>
+      <p class="process">"Trust the Process"</p>
+      <p>Before the bright lights, there's the gym. Luck's Boxing Gym on North Main is open to fighters and families across Danville — building character, discipline, and the fundamentals that turn beginners into competitors.</p>
+      <p>Youth or adult, first-timer or future pro: lace up, put in the rounds, and find out what you're made of.</p>
+      <a href="tel:14347138839" class="btn" style="margin-top:8px">Call the Gym</a>
+    </div>
+    <div class="reveal">
+      <div class="prog-list">
+        <div class="prow"><div class="pd">Youth Boxing<small>Mentorship, discipline &amp; fundamentals · ages 8–17</small></div><div class="pt">Mon–Fri PM</div></div>
+        <div class="prow"><div class="pd">Adult &amp; Fitness<small>Train like a fighter — all levels welcome</small></div><div class="pt">Eves</div></div>
+        <div class="prow"><div class="pd">Competitive Team<small>Sparring &amp; amateur-to-pro development</small></div><div class="pt">By Invite</div></div>
+        <div class="prow"><div class="pd">Open Gym &amp; Sparring<small>Saturdays — first visit is free</small></div><div class="pt">Sat AM</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="spon">
+  <div class="wrap">
+    <h4>Proud Partners &amp; Sponsors</h4>
+    <div class="spon-row reveal">
+      <div class="spon-tile"><img src="https://www.luckypunchpromotions.com/uploads/9/6/6/5/9665124/caesarsvirginia-laurel-blk_orig.jpg" alt="Caesars Virginia"></div>
+      <div class="spon-tile"><img src="https://www.luckypunchpromotions.com/uploads/9/6/6/5/9665124/published/bud-light.png" alt="Bud Light"></div>
+      <div class="spon-tile"><img src="https://www.luckypunchpromotions.com/uploads/9/6/6/5/9665124/5558085_orig.png" alt="C&amp;D Family Pawn Shop"></div>
+      <div class="spon-tile"><img src="https://www.luckypunchpromotions.com/uploads/9/6/6/5/9665124/1726253750626_orig.png" alt="Taqueria La G"></div>
+      <div class="spon-tile"><img src="https://www.luckypunchpromotions.com/uploads/9/6/6/5/9665124/1615996910722_orig.png" alt="The Sustainable Homestead Institute"></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="tickets">
+  <div class="wrap cta-inner reveal">
+    <span class="eyebrow">Don't Watch From Home</span>
+    <h2>Be <span class="gold">Ringside</span></h2>
+    <p>Tickets for the next Lucky Punch fight night, or your first session at Luck's Boxing Gym — it starts with one call.</p>
+    <a href="tel:14347138839" class="btn btn-gold" style="font-size:1.2rem;padding:18px 46px">Call (434) 713-8839</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <img src="https://firebasestorage.googleapis.com/v0/b/dot-routed-user-data/o/krHEIIXQnnWifQfvdpNjarVHszm2%2F7vuwmjyhv429icf5r%2Fthumb%401024_7vuwmjyhv429icf5r.png?alt=media&token=5264af4d-0e6a-48d1-aecd-f66182097d44" alt="Luck's Boxing Gym" style="height:56px;width:auto;margin-bottom:16px">
+      <p>Home of Lucky Punch Promotions — professional boxing &amp; youth development. Founded by Marcus D. Luck. Danville, Virginia · since 2005.</p>
+    </div>
+    <div class="col">
+      <h5>The Gym</h5>
+      <a href="https://maps.google.com/?q=2372+N+Main+St+Danville+VA">2372 North Main St<br>Danville, VA</a>
+    </div>
+    <div class="col">
+      <h5>Connect</h5>
+      <a href="tel:14347138839">(434) 713-8839</a>
+      <a href="mailto:lucksboxing@gmail.com">lucksboxing@gmail.com</a>
+      <a href="https://instagram.com/Coach_luck_m">Instagram @Coach_luck_m</a>
+      <a href="https://www.facebook.com/LuckyPunchPromotions">Facebook</a>
+    </div>
+  </div>
+  <p class="thrustra">Preview crafted by <b>Thrustra</b> — revenue systems for businesses that mean it</p>
+</footer>
+
+<script>
+  const nav=document.getElementById('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+  const tog=document.getElementById('tog'),links=document.getElementById('navlinks');
+  tog.onclick=()=>links.classList.toggle('open');
+  links.querySelectorAll('a').forEach(a=>a.onclick=()=>links.classList.remove('open'));
+  const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
